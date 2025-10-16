@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Felices 10 Meses Mi Amor❤️‍🩹✨</title>
+<style>
+  :root{
+    --book-w: 960px;
+    --book-h: 620px;
+    --page-w: calc(var(--book-w) / 2);
+    --page-h: var(--book-h);
+    --persp: 3000px;
+    --radius: 10px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  html,body{
+    height:100%;
+    font-family:serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:20px;
+    background-image:url('https://i.imgur.com/WxzOaN2.jpeg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    animation: galaxy 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes galaxy {
+    0%{filter:brightness(1);}
+    100%{filter:brightness(1.2);}
+  }
+
+  .scene{perspective:var(--persp);}
+
+  .book{
+    width:var(--book-w);
+    height:var(--book-h);
+    position:relative;
+    transform-style:preserve-3d;
+  }
+
+  .sheet{
+    width:var(--page-w);
+    height:var(--page-h);
+    position:absolute;
+    top:0;
+    left:50%;
+    transform-origin:left center;
+    transform-style:preserve-3d;
+    transition:transform 1s ease, box-shadow 0.6s ease;
+    border-radius:var(--radius);
+  }
+
+  .face{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:var(--radius);
+    border:1px solid rgba(0,0,0,0.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    text-align:center;
+    line-height:1.6;
+    font-size:1.1rem;
+    box-shadow:inset 0 0 15px rgba(0,0,0,0.1);
+    transition:box-shadow 0.5s ease;
+  }
+
+  /* Portadas */
+  .cover{
+    background:linear-gradient(145deg, #c62828, #b71c1c);
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-size:1.6rem;
+    font-weight:bold;
+    box-shadow:0 5px 25px rgba(0,0,0,0.4);
+  }
+
+  .cover.front{
+    background-image:url('https://i.imgur.com/dYBvXQk.jpeg');
+  }
+
+  .cover.back{
+    background-image:url('https://i.imgur.com/NJ4z3N2.jpeg');
+  }
+
+  /* Páginas interiores */
+  .page{
+    background:linear-gradient(135deg, #bbdefb, #e3f2fd);
+    color:#000;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  .face.left{transform:rotateY(180deg);}
+  .folio{
+    position:absolute;
+    bottom:10px;
+    width:100%;
+    text-align:center;
+    font-size:0.8rem;
+    opacity:0.5;
+  }
+
+  /* Botones */
+  .controls{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-top:25px;
+  }
+
+  button{
+    padding:10px 25px;
+    border:none;
+    background:#d32f2f;
+    color:white;
+    cursor:pointer;
+    border-radius:10px;
+    font-size:1rem;
+    font-weight:bold;
+    box-shadow:0 3px 10px rgba(0,0,0,0.3);
+    transition:all 0.3s ease;
+  }
+
+  button:hover{
+    background:#b71c1c;
+    transform:scale(1.05);
+  }
+
+  .sheet.flipped{
+    transform:rotateY(-180deg);
+    box-shadow:-10px 0 25px rgba(0,0,0,0.3);
+  }
+
+  .sheet:not(.flipped):hover{
+    box-shadow:10px 0 25px rgba(0,0,0,0.25);
+  }
+</style>
+</head>
+<body>
+
+<div class="scene">
+  <div class="book" id="book"></div>
+</div>
+
+<div class="controls">
+  <button id="prev">⬅️ Anterior</button>
+  <button id="next">Siguiente ➡️</button>
+</div>
+
+<script>
+(function(){
+  const mensajes = {
+    1:"Holiis soy yo de nuevo jiji 👀🥺❤️ Oye princesa recuerdas cuando fue la primera vez que nos encontramos esa primera vez donde ninguno de los dos sabía que llegaríamos a tener una relación tan bonish ❤️‍🩹🫶✨.",
+    2:"En ese momento yo estaba mongolito jiji bueno todavía verdad 🙈👀 en ese momento esa sensación sabía que te quería a ti y sí conforme fue pasando el tiempo me di cuenta que estaba tan enamorado de tí que incluso la demás gente no me importaba por qué yo sabía desde el fondo de mi corazón de pollito que eras buena pero sobre todo tenías un corazón tan lindo y entonces te quiero a ti por siempre ❤️‍🩹✨.",
+    3:"Pero no solo eso, sí no qué también sabía que eras una princesita recuerdo también cuando dormiamos las primeras noches en llamada cada vez más hacías que mi corazoncito se sintiera bien y esa sensación tan Waos que ni yo mismo me lo podía creer como había pasado tan rápido pero tan bonito ❤️‍🩹🫶✨.",
+    4:"Y si por qué tal vez paso tan rápido todo eso, pero sabes también fue y seguira siendo una sensación muy bonita y única por qué el amor que te tengo no solo es amor sí no qué también es comprensión, cariño y confíanza y respeto, por qué tal vez yo podré ser un mongolito o un supelman o un simple novio pero tú para mí eres alguien increíble, única y no solo por qué eres mi novia, sí no también por qué eres mi compañera de vida ❤️🫶.",
+    5:"Pero también recuerda qué tú no solo fuiste el mejor regalo que la vida me pudo haber dado, sí no qué también fuiste y eres y seguirás siendo la mejor compañera, hija, hermana, mamá que la vida nos pudo haber regalado eres una de esas personitas que sin duda alguna se merece miles de abrazos pero no solo eso sí no qué también que también mucho cariño, amor y comprensión por qué sí aún que tal vez tú no lo sepas pero sabes has estado haciendo muy buen trabajo todo esté tiempo y te felicito mucho por el gran esfuerzo y dedicación que haces, en el trabajo en tu casa y en cuidar a la princesita jiji también te felicito por el gran amor que me brindas día con día no importa si para ti es poco o mucho por qué apesar de eso tengo claro qué eres sin duda la mejor novia que he tenido ❤️‍🩹✨.",
+    6:"Gracias una vez más por ese gran esfuerzo que haces día con día y por enseñarme a amar tan bonito tú corazón pero también gracias por amarme tan lindo y bonito también por esa atención y cariño que me pones por qué apesar de que tú día haya sido malo o simplemente bueno ahí estás tú con una llamaditap qué me alegran los días con tan solo escuchar tú voz, felices 10 meses mi amor y que sigamos cumpliendo aún más tii amooo ❤️‍🩹✨🫶."
+  };
+
+  const TOTAL_PAGES = 6;
+  const TOTAL_SHEETS = Math.ceil(TOTAL_PAGES / 2) + 1;
+  const book = document.getElementById("book");
+  const sheets = [];
+
+  function makePage(n){
+    const p = document.createElement("div");
+    p.className = "face page";
+    p.innerHTML = `<div>${mensajes[n] || ""}</div><div class="folio">${n}</div>`;
+    return p;
+  }
+
+  const coverFront = () => {
+    const c = document.createElement("div");
+    c.className = "cover front";
+    c.innerHTML = "💖 Libro del Amor 💖";
+    return c;
+  };
+
+  const coverBack = () => {
+    const c = document.createElement("div");
+    c.className = "cover back";
+    c.innerHTML = "❤️ I LOVE YOU ❤️";
+    return c;
+  };
+
+  for(let i=0;i<TOTAL_SHEETS;i++){
+    const s = document.createElement("div");
+    s.className = "sheet";
+    s.dataset.i = i;
+    const right = document.createElement("div");
+    right.className = "face right";
+    const left = document.createElement("div");
+    left.className = "face left";
+
+    if(i===0){
+      right.appendChild(coverFront());
+      left.appendChild(makePage(1));
+    } else if(i===TOTAL_SHEETS-1){
+      right.appendChild(makePage(TOTAL_PAGES));
+      left.appendChild(coverBack());
+    } else {
+      const r=2*i, l=2*i+1;
+      if(r<=TOTAL_PAGES) right.appendChild(makePage(r));
+      if(l<=TOTAL_PAGES) left.appendChild(makePage(l));
+    }
+
+    s.appendChild(right);
+    s.appendChild(left);
+    book.appendChild(s);
+    sheets.push(s);
+  }
+
+  let pointer=0;
+
+  function nextPage(){
+    if(pointer < sheets.length){
+      sheets[pointer].classList.add("flipped");
+      pointer++;
+    }
+  }
+
+  function prevPage(){
+    if(pointer > 0){
+      pointer--;
+      sheets[pointer].classList.remove("flipped");
+    }
+  }
+
+  document.getElementById("next").addEventListener("click", nextPage);
+  document.getElementById("prev").addEventListener("click", prevPage);
+})();
+</script>
+
+</body>
+</html>
