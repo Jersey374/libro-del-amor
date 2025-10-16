@@ -6,8 +6,8 @@
 <title>Felices 10 Meses Mi Amor ❤️‍🩹✨</title>
 <style>
   :root{
-    --book-w: 90vw; /* Ancho adaptable */
-    --book-h: 70vh; /* Altura adaptable */
+    --book-w: 90vw;
+    --book-h: 70vh;
     --page-w: calc(var(--book-w) / 2);
     --page-h: var(--book-h);
     --persp: 2000px;
@@ -24,16 +24,7 @@
     align-items:center;
     flex-direction:column;
     gap:20px;
-    background-image:url('https://i.imgur.com/L8cQ7uI.jpeg'); /* Fondo galáctico */
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    animation: galaxy 10s ease-in-out infinite alternate;
-  }
-
-  @keyframes galaxy {
-    0%{filter:brightness(1);}
-    100%{filter:brightness(1.2);}
+    background-color:#b3e5fc; /* 💙 Fondo azul claro */
   }
 
   .scene{perspective:var(--persp);}
@@ -75,11 +66,9 @@
     overflow-wrap:break-word;
   }
 
-  /* Portadas */
+  /* 🖤 Portadas negras */
   .cover{
-    background:linear-gradient(145deg, #c62828, #b71c1c);
-    background-size:cover;
-    background-position:center;
+    background:linear-gradient(145deg, #000, #222);
     color:white;
     display:flex;
     flex-direction:column;
@@ -91,18 +80,15 @@
     box-shadow:0 5px 25px rgba(0,0,0,0.4);
   }
 
-  .cover.front{
-    background-image:url('https://i.imgur.com/dYBvXQk.jpeg');
+  .cover.front::before,
+  .cover.back::before {
+    content: "";
   }
 
-  .cover.back{
-    background-image:url('https://i.imgur.com/NJ4z3N2.jpeg');
-  }
-
-  /* Páginas interiores */
+  /* ❤️ Páginas interiores rojas */
   .page{
-    background:linear-gradient(135deg, #bbdefb, #e3f2fd);
-    color:#000;
+    background:linear-gradient(135deg, #ef5350, #c62828);
+    color:#fff;
     box-shadow:0 4px 12px rgba(0,0,0,0.25);
   }
 
@@ -205,14 +191,12 @@
   const coverFront = () => {
     const c = document.createElement("div");
     c.className = "cover front";
-    c.innerHTML = "💖 Libro del Amor 💖";
     return c;
   };
 
   const coverBack = () => {
     const c = document.createElement("div");
     c.className = "cover back";
-    c.innerHTML = "❤️ I LOVE YOU ❤️";
     return c;
   };
 
