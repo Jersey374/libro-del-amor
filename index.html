@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Felices 10 Meses Mi Amor❤️‍🩹✨</title>
+<title>Felices 10 Meses Mi Amor ❤️‍🩹✨</title>
 <style>
   :root{
     --book-w: 960px;
@@ -24,16 +24,16 @@
     align-items:center;
     flex-direction:column;
     gap:20px;
-    background-image:url('https://i.imgur.com/WxzOaN2.jpeg');
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background-image: url('https://i.imgur.com/L8cQ7uI.jpeg'); /* Fondo galáctico azul/rosado */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     animation: galaxy 10s ease-in-out infinite alternate;
   }
 
   @keyframes galaxy {
-    0%{filter:brightness(1);}
-    100%{filter:brightness(1.2);}
+    0%{filter: brightness(1) saturate(1);}
+    100%{filter: brightness(1.25) saturate(1.2);}
   }
 
   .scene{perspective:var(--persp);}
@@ -62,7 +62,7 @@
     inset:0;
     backface-visibility:hidden;
     border-radius:var(--radius);
-    border:1px solid rgba(0,0,0,0.15);
+    border:1px solid rgba(0,0,0,0.1);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -70,15 +70,13 @@
     text-align:center;
     line-height:1.6;
     font-size:1.1rem;
-    box-shadow:inset 0 0 15px rgba(0,0,0,0.1);
+    box-shadow:inset 0 0 20px rgba(0,0,0,0.08);
     transition:box-shadow 0.5s ease;
   }
 
-  /* Portadas */
+  /* 🌹 Portadas */
   .cover{
-    background:linear-gradient(145deg, #c62828, #b71c1c);
-    background-size:cover;
-    background-position:center;
+    background:linear-gradient(135deg, #c62828, #8e0000);
     color:white;
     display:flex;
     flex-direction:column;
@@ -87,22 +85,26 @@
     text-align:center;
     font-size:1.6rem;
     font-weight:bold;
-    box-shadow:0 5px 25px rgba(0,0,0,0.4);
+    box-shadow:0 6px 25px rgba(0,0,0,0.5);
+    background-image:url('https://i.imgur.com/YcCQlwP.jpeg'); /* textura elegante tipo cuero rojo */
+    background-size:cover;
+    background-position:center;
   }
 
-  .cover.front{
-    background-image:url('https://i.imgur.com/dYBvXQk.jpeg');
+  .cover.front::before,
+  .cover.back::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.05);
+    mix-blend-mode:overlay;
   }
 
-  .cover.back{
-    background-image:url('https://i.imgur.com/NJ4z3N2.jpeg');
-  }
-
-  /* Páginas interiores */
+  /* 🌸 Páginas interiores (azul claro) */
   .page{
-    background:linear-gradient(135deg, #bbdefb, #e3f2fd);
+    background:linear-gradient(135deg, #dbeeff, #f1f8ff);
     color:#000;
-    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
   }
 
   .face.left{transform:rotateY(180deg);}
@@ -115,7 +117,7 @@
     opacity:0.5;
   }
 
-  /* Botones */
+  /* 🔘 Botones */
   .controls{
     display:flex;
     justify-content:center;
@@ -228,21 +230,8 @@
   }
 
   let pointer=0;
-
-  function nextPage(){
-    if(pointer < sheets.length){
-      sheets[pointer].classList.add("flipped");
-      pointer++;
-    }
-  }
-
-  function prevPage(){
-    if(pointer > 0){
-      pointer--;
-      sheets[pointer].classList.remove("flipped");
-    }
-  }
-
+  function nextPage(){ if(pointer < sheets.length){ sheets[pointer].classList.add("flipped"); pointer++; } }
+  function prevPage(){ if(pointer > 0){ pointer--; sheets[pointer].classList.remove("flipped"); } }
   document.getElementById("next").addEventListener("click", nextPage);
   document.getElementById("prev").addEventListener("click", prevPage);
 })();
